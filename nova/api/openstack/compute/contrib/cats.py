@@ -41,7 +41,7 @@ CATS = [{'id': 1,
 
 
 class CatController(object):
-    """Simple cat controller"""
+    """Simple cat resource"""
 
     def index(self, req):
         """Retrieve a list of cats"""
@@ -51,7 +51,16 @@ class CatController(object):
 
     def show(self, req, id):
         """Show a specific cat"""
+        # FIXME: Make this return the proper cat!
         raise NotImplementedError()
+
+
+class ExtendedServerController(wsgi.Controller):
+    """Simple cat server extension"""
+    @wsgi.extends
+    def show(self, req, resp_obj, id):
+        # FIXME: Make this return a random cat!
+        resp_obj.obj['server']['cat'] = {}
 
 
 class Cats(extensions.ExtensionDescriptor):
@@ -70,3 +79,8 @@ class Cats(extensions.ExtensionDescriptor):
                                            CatController())
         resources.append(res)
         return resources
+
+    def get_controller_extensions(self):
+        controller = ExtendedServerController()
+        extension = extensions.ControllerExtension(self, 'servers', controller)
+        return [extension]
