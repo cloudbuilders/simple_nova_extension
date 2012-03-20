@@ -28,7 +28,6 @@ from nova import flags
 
 FLAGS = flags.FLAGS
 
-
 CATS = [{'id': 1,
          'type': 'cute', 'thumb':
          'http://pages.swcp.com/~jamii/OtherCats/coco.jpg',
