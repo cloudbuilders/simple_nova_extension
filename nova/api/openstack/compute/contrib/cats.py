@@ -54,7 +54,7 @@ class CatController(object):
         raise NotImplementedError()
 
 
-class ExtendedServerController(wsgi.Controller):
+class ExtendedServerCatController(wsgi.Controller):
     """Simple cat server extension"""
     @wsgi.extends
     def show(self, req, resp_obj, id):
@@ -80,6 +80,6 @@ class Cats(extensions.ExtensionDescriptor):
         return resources
 
     def get_controller_extensions(self):
-        controller = ExtendedServerController()
+        controller = ExtendedServerCatController()
         extension = extensions.ControllerExtension(self, 'servers', controller)
         return [extension]
