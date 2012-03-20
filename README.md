@@ -69,3 +69,7 @@ Finally, add cli support by adding this to python-novaclient/novaclient/v1_1/she
     +        'URL'])
 
 This diff is approximate, and only intended as a hint!
+
+Now, you should be able to see some cats!
+
+    nova cat-list
