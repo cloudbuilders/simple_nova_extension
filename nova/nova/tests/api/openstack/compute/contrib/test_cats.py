@@ -41,3 +41,12 @@ class CatsExtensionTest(test.TestCase):
         res = req.get_response(fakes.wsgi_app())
         output = json.loads(res.body)
         self.assertEqual(res.status_int, 200)
+
+    def test_show(self):
+        req = webob.Request.blank('/v2/fake/os-cats/1')
+        req.method = "GET"
+        req.headers["content-type"] = "application/json"
+
+        res = req.get_response(fakes.wsgi_app())
+        output = json.loads(res.body)
+        self.assertEqual(res.status_int, 501)

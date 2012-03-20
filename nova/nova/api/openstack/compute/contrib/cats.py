@@ -18,6 +18,8 @@
 import datetime
 import urlparse
 
+from webob import exc
+
 from nova.api.openstack import extensions
 from nova.api.openstack import wsgi
 from nova.api.openstack import xmlutil
@@ -51,7 +53,7 @@ class CatController(object):
     def show(self, req, id):
         """Show a specific cat"""
         # FIXME: Make this return the proper cat!
-        raise NotImplementedError()
+        raise exc.HTTPNotImplemented()
 
 
 class ExtendedServerCatController(wsgi.Controller):
