@@ -16,8 +16,9 @@ designed to be run from the nova source tree.  To use it:
 
     cd /opt/stack/
     git clone git@github.com:cloudbuilders/simple_nova_extension.git
-    cp simple_nova_extension/nova/nova/api/openstack/compute/contrib/cats.py nova/nova/api/openstack/compute/contrib/cats.py
-    cp simple_nova_extension/nova/nova/tests/api/openstack/compute/contrib/test_cats.py nova/nova/tests/api/openstack/compute/contrib/test_cats.py
+    cd simple_nova_extension
+    cp nova/nova/api/openstack/compute/contrib/cats.py ../nova/nova/api/openstack/compute/contrib/cats.py
+    cp nova/nova/tests/api/openstack/compute/contrib/test_cats.py ../nova/nova/tests/api/openstack/compute/contrib/test_cats.py
 
     # Then, restart your nova-api process!
 

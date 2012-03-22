@@ -74,6 +74,7 @@ class Cats(extensions.ExtensionDescriptor):
     updated = "2012-03-20T00:00:00+00:00"
 
     def get_resources(self):
+        """Return list of resource extensions"""
         resources = []
 
         res = extensions.ResourceExtension('os-cats',
@@ -82,6 +83,7 @@ class Cats(extensions.ExtensionDescriptor):
         return resources
 
     def get_controller_extensions(self):
+        """Return list of controller extensions"""
         controller = ExtendedServerCatController()
         extension = extensions.ControllerExtension(self, 'servers', controller)
         return [extension]
