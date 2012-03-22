@@ -32,11 +32,11 @@ FLAGS = flags.FLAGS
 
 CATS = [{'id': 1,
          'type': 'cute', 'thumb':
-         'http://pages.swcp.com/~jamii/OtherCats/coco.jpg',
+         'http://images.ansolabs.com/coco.jpg',
          'url': 'http://pages.swcp.com/~jamii/OtherCats/'},
         {'id': 2,
          'type': 'funny',
-         'thumb': 'http://www.hilariouspetvideos.com/funny-cat.jpg',
+         'thumb': 'http://images.ansolabs.com/funny-cat.jpg',
          'url': 'http://www.hilariouspetvideos.com/'},
 ]
 
